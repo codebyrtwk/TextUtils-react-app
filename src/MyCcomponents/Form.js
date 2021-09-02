@@ -8,10 +8,10 @@ export default function Form(props) {
         };
 
     const handleOnChange = (e) => {
-        setText(e.target.value);
+         setText(e.target.value);
         };
     const handleDownClick = () => {
-            setText(text.toLowerCase());
+          setText(text.toLowerCase());
         };
 
     
@@ -31,9 +31,9 @@ export default function Form(props) {
 
 
     //clear text
-    const handleClearClick = () => {
-        setText("");
-        };
+    // const handleClearClick = () => {
+    //     let text = setText("");
+    //     };
     //remove extra space
     const handleExtraSpace = () => {
             setText(text.trim());
@@ -52,11 +52,11 @@ export default function Form(props) {
                 <div className="form-group">
                 <textarea  value = {text} onChange = {handleOnChange} className="form-control" id="exampleFormControlTextarea1" rows="8"></textarea>
                 </div>
-                <button type="submit" onClick = {handleUpClick} className="btn btn-primary my-3 mx-1">Click to UPPERCASE</button>
+                <button type="success" onClick = {handleUpClick} className="btn btn-primary my-3 mx-1">Click to UPPERCASE</button>
                 <button type="submit" onClick = {handleDownClick} className="btn btn-primary my-3 mx-1">Click to lowercase</button>
                 <button type="submit" onClick = {handleCopyClick} className="btn btn-primary my-3 mx-1">Copy to clipboard</button>
                 <button type="submit" onClick = {handleExtraSpace} className="btn btn-primary my-3 mx-1">Remove Extra Spaces</button>
-                <button type="submit" onClick = {handleClearClick} className="btn btn-primary my-3 mx-1">Clear Text</button>
+                {/* <button type="submit" onClick = {handleClearClick} className="btn btn-primary my-3 mx-1">Clear Text</button> */}
                 
             </form>
         </div>
@@ -65,7 +65,7 @@ export default function Form(props) {
             <h2>Your Text Summary :</h2>
             <p>Your Text has <strong>{character}</strong> characters and <strong>{words}</strong> Words . </p>
             <h3>Preview</h3>
-            <p border="1" >{text}</p>
+            <p >{text}</p>
         </div>
         
         </>
