@@ -43,7 +43,7 @@ export default function Form(props) {
         };
 
     const character = text.length;
-    const words = text.split(" ").filter((element)=>{return element.length != 0}).length;
+    const words = text.split(" ").filter((element)=>{return element.length !== 0}).length;
     
     
     return (
