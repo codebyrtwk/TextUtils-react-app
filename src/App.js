@@ -17,13 +17,8 @@ function App() {
   return (
     <>
     <Header title = "TEXT UTILS" />
-    <Router>
-    <Switch>
-        <Route  exact path="/">
-          <Form Heading = "Enter your Text to Process" />
-          </Route>
-        </Switch>
-    </Router>
+    <Form Heading = "Enter your Text to Process" />
+    
     </>
     );
     
