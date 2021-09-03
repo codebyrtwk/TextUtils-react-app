@@ -3,15 +3,18 @@ import React , {useState} from 'react'
 
 export default function Form(props) {
     const [text, setText] = useState("");
+    
+    const handleOnChange = (e) => {
+        setText(e.target.value);
+       };
     const handleUpClick = () => {
         setText(text.toUpperCase());
         };
 
-    const handleOnChange = (e) => {
-         setText(e.target.value);
-        };
+    
     const handleDownClick = () => {
           setText(text.toLowerCase());
+        //   sleep(5000);
         };
 
     
@@ -31,16 +34,16 @@ export default function Form(props) {
 
 
     //clear text
-    // const handleClearClick = () => {
-    //     let text = setText("");
-    //     };
+    const handleClearClick = () => {
+        setText("");
+        };
     //remove extra space
     const handleExtraSpace = () => {
             setText(text.trim());
         };
 
     const character = text.length;
-    const words = text.split(" ").length;
+    const words = text.split(" ").filter((element)=>{return element.length != 0}).length;
     
     
     return (
@@ -48,7 +51,7 @@ export default function Form(props) {
     
         <div className="container my-3">
             <h1>{props.Heading}  </h1>
-            <form>
+           
                 <div className="form-group">
                 <textarea  value = {text} onChange = {handleOnChange} className="form-control" id="exampleFormControlTextarea1" rows="8"></textarea>
                 </div>
@@ -56,9 +59,9 @@ export default function Form(props) {
                 <button type="submit" onClick = {handleDownClick} className="btn btn-primary my-3 mx-1">Click to lowercase</button>
                 <button type="submit" onClick = {handleCopyClick} className="btn btn-primary my-3 mx-1">Copy to clipboard</button>
                 <button type="submit" onClick = {handleExtraSpace} className="btn btn-primary my-3 mx-1">Remove Extra Spaces</button>
-                {/* <button type="submit" onClick = {handleClearClick} className="btn btn-primary my-3 mx-1">Clear Text</button> */}
+                <button type="submit" onClick = {handleClearClick} className="btn btn-primary my-3 mx-1">Clear Text</button>
                 
-            </form>
+           
         </div>
 
         <div className="container my-2 " >
